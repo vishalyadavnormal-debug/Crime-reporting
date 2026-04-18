@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Online Crime Reporting Portal</title>
+
+  <style>
+    * { box-sizing: border-box; font-family: Arial; }
+    body { margin: 0; background: #f4f6f8; }
+
+    header {
+      background: #1f3c88;
+      /* background: white; */
+      color:white;
+      padding: 15px;
+      position: relative;
+    }
+
+    .logo-box {
+      position: absolute;
+      right: 40px;
+      top: 20px;
+      width: 60px;
+      height: 60px;
+      border: 1px dashed #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+    #logooo{
+      width:100px;
+    }
+
+    nav { background: #162447; padding: 10px; }
+    nav a { color: white; margin-right: 15px; cursor: pointer; }
+
+    .container { padding: 30px; }
+    .card {
+      background: white;
+      padding: 25px;
+      max-width: 500px;
+      margin: 20px auto;
+      border-radius: 8px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    button { background: #1f3c88; color: white; border: none; }
+    .hidden { display: none; }
+
+    .captcha { background: #eef; padding: 10px; margin-top: 10px; }
+
+    .logout { background: #c0392b; float: right; width: auto; }
+
+    table { width: 100%; margin-top: 15px; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+
+    /* HOME INFO SECTION */
+    .info-section {
+      background: #fff;
+      padding: 40px 20px;
+      margin-top: 30px;
+    }
+
+    .info-title {
+      text-align: center;
+      font-size: 26px;
+      color: #1f3c88;
+      margin-bottom: 30px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .info-card {
+      background: #f4f6f8;
+      border-radius: 8px;
+      padding: 15px;
+    }
+
+    .img-placeholder {
+      height: 160px;
+      background: #ddd;
+      border: 2px dashed #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      margin-top: 60px;
+      font-size: 12px;
+    }
+
+    /* BIG BLOCK */
+    .big-block {
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #f4f6f8;
+      padding: 25px;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+    }
+
+    footer {
+      background: #162447;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+.marquee-box {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #2e0996;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 12s linear infinite;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.headline{
+  color: rgb(223, 32, 32);
+  font-style: italic;
+  font-weight: bold;
+
+}
+
+  </style>
+</head>
+
+<body>
+<header>
+  <h2>Online Crime Reporting Portal 
+  </h2>
+ 
+</header>
+
+<nav>
+  <a onclick="showHome()">Home</a>
+  <a onclick="showRegister()">Register</a>
+  <a onclick="showLogin()">Login</a>
+  <a onclick="showLogin()">Track Status</a>
+</nav>
+
+<!-- HOME -->
+<div id="home" class="container">
+  
+
+<!-- animation-->
+  <div class="card">
+    <h3 class="headline">Welcome to the Online Crime Reporting Portal</h3>
+    <p>
+      Report crimes securely and responsibly through a trusted digital platform.
+Your participation helps law enforcement ensure safety, transparency, and justice for all citizens of India.
+     <span class="headline">Please register and login to report crimes online safely.</span> </p>
+  </div>
+
+<div class="marquee-box">
+  <div class="marquee-text">
+    🚓 Welcome to Online Crime Reporting Portal  Your Safety, Our Priority 🚓
+  </div>
+</div>
+
+
+
+  <!-- INFO BLOCKS -->
+  <section class="info-section">
+    <h2 class="info-title">Online Crime Reporting – India</h2>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="img-placeholder"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvEhuAiGRzRiN8E4mMPfRVfLY7GV4HQfhsiA&s" alt=""></div>
+        <p>Dial 112 for any emergency requiring police assistance.</p>
+      </div>
+
+      <div class="info-card">
+        <div class="img-placeholder"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFjP3cDoQi-ALkwI7Ps1VCB52Nrb-AKnD0Q&s" alt=""></div>
+        <p>1090 for women safety and harassment-related complaints.</p>
+      </div>
+
+      <div class="info-card">
+        <div class="img-placeholder"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbBA_ZCAJVsB_DuOtaLa8k2BJ7ro2gAqE8Og&s" alt=""></div>
+        <p>101 for fire emergency.</p>
+      </div>
+
+      <div class="info-card">
+        <div class="img-placeholder"><img src="https://thepoweryogaco.wordpress.com/wp-content/uploads/2012/12/blog-image.jpg?w=300&h=166" alt=""></div>
+        <p>108 for medical and ambulance services. These helpline numbers operate 24×7 across India to ensure quick response, safety, and protection for all citizens..</p>
+      </div>
+    </div>
+
+    <!-- EXTRA BIG BLOCK -->
+    <div class="big-block">
+      <div class="img-placeholder"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXzFrF8vETcYbjxmFSye_rLus4ckwnZ_BSpw&s" alt=""></div>
+      <div>
+        <h3>Why Online Crime Reporting is Important?</h3>
+        <p>
+          Online Crime Reporting System in India is a digital initiative that allows
+          citizens to report crimes easily from anywhere. It reduces the burden on
+          police stations, saves time, and ensures that complaints are recorded safely.
+          This system improves transparency, accountability, and helps law enforcement
+          agencies take faster action. Citizens can track complaints and feel more secure
+          while reporting sensitive crimes.
+        </p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<!-- REGISTER -->
+<div id="register" class="container hidden">
+  <div class="card">
+    <h3>Register</h3>
+    <input id="regUser" placeholder="Mobile Number" />
+    <input id="regPass" type="password" placeholder="Password" />
+    <div class="captcha" id="regCaptcha"></div>
+    <input id="regCapAns" placeholder="CAPTCHA Answer" />
+    <button onclick="registerUser()">Register</button>
+    <p id="regMsg"></p>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="container hidden">
+  <div class="card">
+    <h3>Login</h3>
+    <input id="loginUser" placeholder="Mobile Number" />
+    <input id="loginPass" type="password" placeholder="Password" />
+    <div class="captcha" id="loginCaptcha"></div>
+    <input id="loginCapAns" placeholder="CAPTCHA Answer" />
+    <button onclick="loginUser()">Login</button>
+    <p id="loginMsg"></p>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="container hidden">
+  <button class="logout" onclick="logout()">Logout</button>
+  <h3>User Dashboard</h3>
+
+  <div class="card">
+    <input id="crimeType" placeholder="Crime Type" />
+    <textarea id="crimeDetails" placeholder="Crime Details"></textarea>
+    <div class="captcha" id="crimeCaptcha"></div>
+    <input id="crimeCapAns" placeholder="CAPTCHA Answer" />
+    <button onclick="submitCrime()">Submit Crime</button>
+  </div>
+
+  <div class="card">
+    <h4>My Reports</h4>
+    <table>
+      <thead>
+        <tr><th>Type</th><th>Details</th></tr>
+      </thead>
+      <tbody id="reportTable"></tbody>
+    </table>
+  </div>
+</div>
+
+<footer>
+  © 2026 Online Crime Reporting Portal 
+</footer>
+
+<!-- 🔒 JS SAME AS BEFORE (UNCHANGED) -->
+
+    <script>
+      let currentUserId = null;
+      let captcha = {};
+
+      // CAPTCHA
+      function generateCaptcha(id) {
+        let a = Math.floor(Math.random() * 10);
+        let b = Math.floor(Math.random() * 10);
+        captcha[id] = a + b;
+        document.getElementById(id).innerText = `What is ${a} + ${b}?`;
+      }
+
+      // PAGE CONTROL
+      function hideAll() {
+        ["home", "register", "login", "dashboard"].forEach((id) =>
+          document.getElementById(id).classList.add("hidden")
+        );
+      }
+      function showHome() {
+        hideAll();
+        home.classList.remove("hidden");
+      }
+      function showRegister() {
+        hideAll();
+        register.classList.remove("hidden");
+        generateCaptcha("regCaptcha");
+      }
+      function showLogin() {
+        hideAll();
+        login.classList.remove("hidden");
+        generateCaptcha("loginCaptcha");
+      }
+
+      // REGISTER → BACKEND
+      async function registerUser() {
+        if (parseInt(regCapAns.value) !== captcha.regCaptcha)
+          return alert("Wrong CAPTCHA ❌");
+
+        const res = await fetch("/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: regUser.value,
+            password: regPass.value,
+          }),
+        });
+
+        const data = await res.json();
+        regMsg.innerText = data.message;
+        if (res.ok) {
+          regUser.value = regPass.value = regCapAns.value = "";
+          generateCaptcha("regCaptcha");
+        }
+      }
+
+      // LOGIN → BACKEND
+      async function loginUser() {
+        const username = document.getElementById("loginUser").value.trim();
+        const password = document.getElementById("loginPass").value.trim();
+        const capAns = document.getElementById("loginCapAns").value;
+
+        if (!username || !password) {
+          alert("Fill all fields");
+          return;
+        }
+
+        if (parseInt(capAns) !== captcha.loginCaptcha) {
+          alert("Wrong CAPTCHA ❌");
+          return;
+        }
+
+        try {
+          const res = await fetch("/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, password }),
+          });
+
+          const data = await res.json();
+
+          if (!res.ok) {
+            document.getElementById("loginMsg").innerText = data.message;
+            return;
+          }
+
+          // ✅ SUCCESS
+          currentUserId = data.userId;
+          hideAll();
+          document.getElementById("dashboard").classList.remove("hidden");
+          generateCaptcha("crimeCaptcha");
+          loadReports();
+        } catch (err) {
+          alert("Server error");
+        }
+      }
+
+      // LOGOUT
+      function logout() {
+        currentUserId = null;
+        showHome();
+      }
+
+      // REPORT CRIME → BACKEND
+      async function submitCrime() {
+        if (parseInt(crimeCapAns.value) !== captcha.crimeCaptcha)
+          return alert("Wrong CAPTCHA ❌");
+
+        await fetch("/report", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userId: currentUserId,
+            crimeType: crimeType.value,
+            details: crimeDetails.value,
+          }),
+        });
+
+        crimeType.value = crimeDetails.value = crimeCapAns.value = "";
+        generateCaptcha("crimeCaptcha");
+        loadReports();
+      }
+
+      // LOAD REPORTS
+      async function loadReports() {
+        const res = await fetch(`/reports/${currentUserId}`);
+        const reports = await res.json();
+        reportTable.innerHTML = "";
+        reports.forEach((r) => {
+          reportTable.innerHTML += `<tr><td>${r.crimeType}</td><td>${r.details}</td></tr>`;
+        });
+      }
+    </script>
+
+</body>
+</html>
